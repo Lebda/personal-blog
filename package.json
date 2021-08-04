@@ -29,7 +29,9 @@
     "docker:taillogs": "echo Web Server Logs: && cross-conf-env docker logs -f $npm_package_config_imageName",
     "docker:open": "cross-conf-env open-cli http://localhost:$npm_package_config_imagePort",
     "docker:debugmessage": "echo Docker Debug Completed Successfully! Hit Ctrl+C to terminate log tailing.",
-    "docker:debug": "run-s -cs docker:build docker:run docker:open docker:debugmessage docker:taillogs"
+    "docker:debug": "run-s -cs docker:build docker:run docker:open docker:debugmessage docker:taillogs",
+    "gcloud:build": "gcloud builds submit --tag gcr.io/personal-blog/personal-blog --project personal-blog-321815",
+    "gcloud:deploy": "gcloud run deploy --image gcr.io/personal-blog/personal-blog --platform managed --project personal-blog-321815 --region us-east1"
   },
   "private": true,
   "dependencies": {
@@ -41,6 +43,7 @@
     "@angular/platform-browser": "~11.0.9",
     "@angular/platform-browser-dynamic": "~11.0.9",
     "@angular/router": "~11.0.9",
+    "bootstrap-scss": "^5.0.2",
     "mrm": "^3.0.8",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
