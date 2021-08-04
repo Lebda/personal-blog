@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  WORDPRESS_REST_URL: 'http://demo5683935.mockable.io/',
+  WORDPRESS_REST_URL: 'http://demo3479156.mockable.io/',
 };
 
 /*

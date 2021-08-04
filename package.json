@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:qa": "ng serve --configuration=qa",
     "build": "ng build",
     "build:prod": "ng build --prod",
     "test": "ng test",
@@ -95,6 +96,23 @@
     "imageRepo": "lebduskajiri/personal-blog",
     "imageName": "personal-blog",
     "imagePort": "3000",
-    "internalContainerPort": "3000"
+    "internalContainerPort": "3000",
+    "qa": {
+      "fileReplacements": [
+        {
+          "replace": "src/environments/environment.ts",
+          "with": "src/environments/environment.qa.ts"
+        }
+      ],
+      "optimization": true,
+      "outputHashing": "all",
+      "sourceMap": false,
+      "extractCss": true,
+      "namedChunks": false,
+      "aot": true,
+      "extractLicenses": true,
+      "vendorChunk": false,
+      "buildOptimizer": true
+    }
   }
 }
